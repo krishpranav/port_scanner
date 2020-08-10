@@ -14,7 +14,12 @@ if len(sys.argv) == 2:
 else:
     print("Invalid ammount of Argument")
 
-# Add Banner
+def author():
+    print("TOOL IS CREATED BY KRISNA PRANAV")
+    print("Github Link https://www.github.com/krishpranav")
+    print("DO NOT FORGET TO FOLLOW ME")
+
+author()
 print("-" * 50)
 print("Scanning Target: " + target)
 print("Scanning started at:" + str(datetime.now()))
@@ -35,9 +40,12 @@ try:
 
 except KeyboardInterrupt:
     print("\n Exitting Program !!!!")
+    author()
     sys.exit()
 except socket.gaierror:
     print("\n Hostname Could Not Be Resolved !!!!")
+    author()
     sys.exit()
 except socket.error:
+    author()
     print("\ Server not responding")
