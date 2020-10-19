@@ -4,8 +4,8 @@ import socket
 from datetime import datetime
 import time
 
-ascii_banner = pyfiglet.figlet_format("PORT SCANNER")
-print(ascii_banner)
+decoration_banner = pyfiglet.figlet_format("PORT SCANNER")
+print(decoration_banner)
 
 target = input("Enter Your Target Website To Scan For Ports > ")
 
@@ -29,10 +29,9 @@ try:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         socket.setdefaulttimeout(1)
 
-        # returns an error indicator
         result = s.connect_ex((target, port))
         if result == 0:
-            print("Port {} is open".format(port))
+            print("Port {} Is Open".format(port))
         s.close()
 
 except KeyboardInterrupt:
@@ -41,9 +40,8 @@ except KeyboardInterrupt:
     sys.exit()
 except socket.gaierror:
     print("\n Hostname Could Not Be Resolved !!!!")
-    author()
     sys.exit()
 except socket.error:
     print("Mission Failed")
     time.sleep(2)
-    print("Something happend Wrongly Please Try Again Later")
+    print("Some error occured please try again later!!")
